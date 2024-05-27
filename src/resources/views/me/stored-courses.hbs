@@ -1,0 +1,87 @@
+<div class="mt-4">
+    <nav aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="http://localhost:3001/">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Khóa học của tôi</li>
+            </ol>
+    
+        </div>
+    </nav>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tên khóa học</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Giảng viên</th>
+                    <th scope="col">Số bài học</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each courses}}
+                <tr>
+                    <th scope="row">{{sum @index 1}}</th>
+                    <td>
+                        <a href="http://localhost:3001/courses/{{this.slug}}">{{this.name}}</a>
+                    </td>
+                    <td>{{this.price}}</td>
+                    <td>{{this.teacher}}</td>
+                    <td>{{this.quantity_video}}</td>
+                    <td>
+                        <a href="/courses/{{this._id}}/edit" class="btn btn-outline-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="" class="btn btn-outline-danger" data-id="{{this._id}}" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="delete-course-modal modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Xóa khóa học</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Bạn chắc chắn muốn xóa khóa học này?
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn-delete-course" class="btn btn-danger">Xóa</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Hủy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form name="delele-course-form" method="POST">
+
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var courseID
+        var deleteForm = document.forms['delele-course-form']
+        var btnDeleteCourse = document.getElementById('btn-delete-course')
+
+        $('.delete-course-modal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) 
+            courseID = button.data('id') 
+        })
+
+        console.log(btnDeleteCourse)
+        btnDeleteCourse.onclick = function() {
+            deleteForm.action = '/courses/' + courseID + '?_method=DELETE'
+            deleteForm.submit()
+        }
+    })
+</script>

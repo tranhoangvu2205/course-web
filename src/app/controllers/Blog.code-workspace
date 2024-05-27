@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": "../../.."
+	},
+	{
+		"path": "../../../../../Reactjs/demo"
+	},
+	{
+		"path": "../../../../../Reactjs/todolist"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "demo"
+  }
+}

@@ -1,0 +1,182 @@
+header {
+  border-bottom: 1px solid #abb8c3;
+}
+.header-top {
+    background-color: #233a95;
+    height: 36px;
+    text-align: center;
+    p {
+        display: inline-block;
+        line-height: 36px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 13px;
+
+       
+    }
+}  
+.header-nav {
+    padding-top: 17px;
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        .action {
+            display: flex;
+            li {      
+                a {
+                    transition: 0.7s;
+                    font-size: 20px;
+                    color: black;
+                    padding: 10px 30px 10px 20px;
+                    border-radius: 30px;
+                } 
+            }
+            li:hover {
+                a {
+                    font-size: 20px;
+                    color: #233a95;
+                    background-color: rgba(94, 187, 243, 0.2);
+                    text-decoration: none;
+                }
+            }
+        }
+        .search {
+            position: absolute;
+            top: 50%;
+            right: 0px;
+            transform: translateY(-50%);
+            input, button {
+                background-color: rgb(243, 244, 247);
+                height: 50px;
+            }
+            input {
+                width: 400px;
+                padding: 12px 26px;
+                border-top-left-radius: 25px;
+                border-bottom-left-radius: 25px;
+            }
+            button {
+                padding: 0px 25px;
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+                cursor: pointer;
+            }
+
+        }
+    
+    }
+    
+}
+
+section.show {
+    .container {
+       .course-header {
+            font-size: 40px;
+            color: black;
+            padding: 20px 0px;
+            i {
+                font-size: 30px;
+                line-height: 50px;
+            }
+       }
+       .course-content {
+            display: flex;
+            .left {
+                width: 50%;
+                padding-right: 20px;
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+            .right {
+                width: 50%;
+                padding-left: 20px;
+                .text, .course-teacher {
+                    font-weight: bold;
+                }
+                
+                .course-teacher, .course-hourse, .course-quantity-video {
+                    padding: 5px 0;
+                    font-weight: bolder;
+                    span {
+                        color: #233a95;
+                    }
+                }
+                .course-price {
+                    padding: 5px 0;
+                    font-weight: bolder;
+                    span {
+                        color: #d51243;
+                        font-size: 30px;
+
+                    }
+                }
+
+
+                .btn-mua {
+                    background-color: #2bbef9;
+                    padding: 8px 23px;
+                    border: none;
+                    border-radius: 30px;
+                    color: white;
+                    font-size: 20px;
+                    cursor: pointer;
+                    transition: 0.7s;         
+                }
+                .btn-mua:hover {
+                    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                     background-color: #1a96c7;
+                }
+
+            }
+       }
+    }
+    
+}
+
+.footer { 
+    margin-top: 50px;
+    background-color: #233a95;
+    .container {
+        display: flex;
+        .right {
+            width: 50%;
+        }
+        .left {
+            width: 50%;
+            ul {
+                li {
+                    color: white;
+                    padding: 3px 0;
+                }
+            }
+        }
+    }
+    .end {
+
+    }
+
+    
+}
+
+.logo-home {
+    width: 35px;
+    height: 35px;
+}
+.user-avt {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.test1 {
+    color: red;
+}

@@ -1,0 +1,33 @@
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Trang Chủ / Search
+        / key =
+        {{req.query.key}}</li>
+    </ol>
+  </nav>
+  <div class="column">
+    <div class="row">
+      {{#each courses}}
+        <div class="col-sm-6 col-lg-4 mt-4">
+          <div class="card">
+            <a href="/courses/{{this.slug}}">
+              <img
+                class="card-img-top"
+                src="{{this.image}}"
+                alt="Card image cap"
+              />
+            </a>
+            <div class="card-body">
+              <a href="/courses/{{this.slug}}">
+                <h5 class="card-title">{{this.name}}</h5>
+              </a>
+              <a href="/courses/{{this.slug}}" class="btn btn-primary">Xem chi
+                tiết</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
